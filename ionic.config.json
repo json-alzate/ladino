@@ -1,0 +1,7 @@
+{
+  "name": "ladino",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
