@@ -10,6 +10,16 @@
               Login
             </ion-button>
           }
+          @if (showInstallButton) {
+            <ion-button 
+              slot="end" 
+              (click)="installPWA()" 
+              fill="clear" 
+              color="primary"
+              size="small">
+              📱 Instalar
+            </ion-button>
+          }
         </ion-toolbar>
       </ion-header>
       <ion-content>

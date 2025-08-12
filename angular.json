@@ -33,6 +33,16 @@
                 "glob": "**/*",
                 "input": "src/assets",
                 "output": "assets"
+              },
+              {
+                "glob": "manifest.webmanifest",
+                "input": "public",
+                "output": "/"
+              },
+              {
+                "glob": "icons/**/*",
+                "input": "public",
+                "output": "/"
               }
             ],
             "styles": ["src/global.scss", "src/theme/variables.scss"],

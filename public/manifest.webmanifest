@@ -1,9 +1,16 @@
 {
-  "name": "app",
-  "short_name": "app",
+  "name": "Peón Ladino",
+  "short_name": "Peón Ladino",
+  "description": "Aplicación de torneos de ajedrez",
   "display": "standalone",
-  "scope": "./",
-  "start_url": "./",
+  "scope": "/",
+  "start_url": "/",
+  "theme_color": "#3880ff",
+  "background_color": "#ffffff",
+  "orientation": "portrait-primary",
+  "categories": ["games", "sports"],
+  "lang": "es",
+  "dir": "ltr",
   "icons": [
     {
       "src": "icons/icon-72x72.png",
@@ -52,6 +59,14 @@
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable any"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "form_factor": "wide"
     }
   ]
 }

@@ -7,6 +7,7 @@ import { User as FirebaseUser } from 'firebase/auth';
 
 // Services
 import { AuthService } from '@services/auth.service';
+import { PwaService } from './pwa.service';
 
 // Components
 import { LoginComponent } from './shared/components/login/login.component';
@@ -23,9 +24,10 @@ import { environment } from '@environments/environment';
 export class AppComponent {
 
   authService = inject(AuthService);
+  pwaService = inject(PwaService);
   
   isLoggedIn = false;
-
+  showInstallButton = true;
 
   constructor(
     private modalController: ModalController
@@ -35,8 +37,8 @@ export class AppComponent {
   }
 
   async initApp() {
-
     this.initFirebase();
+    this.initPWA();
     // this.fcmService.initPush();
   }
 
@@ -55,6 +57,16 @@ export class AppComponent {
     });
   }
 
+  initPWA() {
+    this.pwaService.installPrompt$.subscribe(show => {
+      this.showInstallButton = show;
+    });
+  }
+
+  async installPWA() {
+    await this.pwaService.installPWA();
+  }
+
  async presentModalLogin() {
      const modal = await this.modalController.create({
       component: LoginComponent,
@@ -64,6 +76,5 @@ export class AppComponent {
     })
      modal.present();
   }
-
 
 }
