@@ -4,7 +4,9 @@ import { ModalController, PopoverController,
   IonToolbar, IonButtons, IonMenuButton, IonAvatar, IonButton, IonItem, IonLabel, IonIcon, IonRow, IonInput, IonCol, IonSegment, IonSegmentButton } from '@ionic/angular/standalone';
 import { UntypedFormGroup, UntypedFormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { addIcons } from 'ionicons';
 
+import { mailOutline, mailSharp, paperPlaneOutline, paperPlaneSharp, heartOutline, heartSharp, archiveOutline, archiveSharp, trashOutline, trashSharp, warningOutline, warningSharp, bookmarkOutline, bookmarkSharp } from 'ionicons/icons';
 
 // models
 import { User as FirebaseUser } from 'firebase/auth';
@@ -71,6 +73,7 @@ export class LoginComponent implements OnInit {
     this.buildFormLogin();
     this.buildFormResetPassword();
     this.listenAuthState();
+    addIcons({ mailOutline, mailSharp, paperPlaneOutline, paperPlaneSharp, heartOutline, heartSharp, archiveOutline, archiveSharp, trashOutline, trashSharp, warningOutline, warningSharp, bookmarkOutline, bookmarkSharp });
   }
 
   get emailFieldLogin() {

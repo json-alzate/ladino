@@ -1,8 +1,18 @@
 <ion-app>
 
     <ion-menu contentId="main-content" type="overlay">
+      <ion-header>
+        <ion-toolbar>
+          @if (isLoggedIn) {
+          <ion-title>Peón Ladino</ion-title>
+          } @else {
+            <ion-button (click)="presentModalLogin()" expand="block" fill="clear">
+              Login
+            </ion-button>
+          }
+        </ion-toolbar>
+      </ion-header>
       <ion-content>
-        
       </ion-content>
       <ion-footer class="ion-no-border">
         <ion-toolbar class="ion-text-center">
